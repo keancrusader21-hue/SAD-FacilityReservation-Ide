@@ -107,7 +107,7 @@ Requester:
 | TC-B4-09 | As Administrator, open Audit Log | Approval/status-change entries are visible |  Pass |
 | TC-B4-10 | Log out → open `dashboard.html` directly | Redirected to `index.html` (access denied) |  Pass |
 
-*Check off Pass or Fail per row while you run through the script on the live deployment, right before submission — a dated screenshot of this filled-in table (or the actual dashboard views) is stronger evidence than the table text alone.*
+
 
 ## 8. Submission Package
    ![Audit Log Screenshot](screenshots/audit-log.png)
