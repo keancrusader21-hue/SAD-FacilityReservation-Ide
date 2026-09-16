@@ -1,24 +1,15 @@
 # Role-Based Facility Reservation and Approval System
 Laboratory 4 - Section B | Systems Analysis and Design
 
-## 1. Setup
 
-### A. Supabase project
-1. Go to https://supabase.com → New Project.
-2. Open **SQL Editor** → paste the entire contents of `supabase-schema.sql` → Run.
-   This creates all tables, triggers (business rules + audit logging), and RLS policies, and seeds 3 sample facilities.
-3. Go to **Project Settings → API** and copy your **Project URL** and **anon public key**.
-4. Open `js/supabaseClient.js` and paste them in place of `YOUR_SUPABASE_PROJECT_URL` and `YOUR_SUPABASE_ANON_KEY`.
-5. In **Authentication → Providers**, make sure Email is enabled. For a class demo, you can also disable "Confirm email" under Authentication → Settings so test accounts can log in immediately.
 
-### B. Create your first Administrator
-Sign-up on the app lets you pick a role (for demo/testing convenience). Create one account with role **Administrator** first — you'll need it to approve reservations and manage facilities.
 
-### C. GitHub Pages
-1. Create a repo named `SAD-FacilityReservation-Ide`.
-2. Push all files (`index.html`, `dashboard.html`, `css/`, `js/`, `supabase-schema.sql`, this `README.md`).
-3. Repo → Settings → Pages → Deploy from branch → `main` / `root`.
-4. Live URL: `https://<your-username>.github.io/SAD-FacilityReservation-Ide/`
+
+## 1. 
+| 1 | GitHub repository URL | `https://github.com/keancrusader21-hue/SAD-FacilityReservation-Ide` 
+
+| 2 | Live GitHub Pages URL | `https://keancrusader21-hue.github.io/SAD-FacilityReservation-Ide/`
+
 
 ## 2. Role-Permission Matrix
 
@@ -95,25 +86,38 @@ Requester:
 
 ## 7. Manual Test Script (TC-B4-01 to TC-B4-10)
 
-| Test ID | Steps | Expected |
-|---|---|---|
-| TC-B4-01 | Log in as Requester → Facilities → Reserve an active facility → submit | Row appears in Reservations with status **Pending** |
-| TC-B4-02 | Submit a reservation for a facility/time that overlaps an already-Approved one | Insert/approve blocked with a schedule-conflict error |
-| TC-B4-03 | Log in as Administrator → Reservations → Approve a Pending request | Status becomes **Scheduled** |
-| TC-B4-04 | As Administrator, Reject a Pending request | Status becomes **Rejected** |
-| TC-B4-05 | Log in as Facility Staff → mark a Scheduled reservation "In Use" | Status updates to **In Use** |
-| TC-B4-06 | As Facility Staff, mark an In Use reservation "Complete" | Status becomes **Completed** |
-| TC-B4-07 | As Requester A, try to edit/cancel Requester B's request (e.g. via API) | Blocked by RLS policy |
-| TC-B4-08 | Set a facility's status to Maintenance → try to reserve it | Blocked with an error from the trigger |
-| TC-B4-09 | As Administrator, open Audit Log | Approval/status-change entries are visible |
-| TC-B4-10 | Log out → open `dashboard.html` directly | Redirected to `index.html` (access denied) |
+| Test ID | Steps | Expected | Result |
+|---|---|---|---|
+| TC-B4-01 | Log in as Requester → Facilities → Reserve an active facility → submit | Row appears in Reservations with status **Pending** | ☐ Pass / ☐ Fail |
+| TC-B4-02 | Submit a reservation for a facility/time that overlaps an already-Approved one | Insert/approve blocked with a schedule-conflict error | ☐ Pass / ☐ Fail |
+| TC-B4-03 | Log in as Administrator → Reservations → Approve a Pending request | Status becomes **Scheduled** | ☐ Pass / ☐ Fail |
+| TC-B4-04 | As Administrator, Reject a Pending request | Status becomes **Rejected** | ☐ Pass / ☐ Fail |
+| TC-B4-05 | Log in as Facility Staff → mark a Scheduled reservation "In Use" | Status updates to **In Use** | ☐ Pass / ☐ Fail |
+| TC-B4-06 | As Facility Staff, mark an In Use reservation "Complete" | Status becomes **Completed** | ☐ Pass / ☐ Fail |
+| TC-B4-07 | As Requester A, try to edit/cancel Requester B's request (e.g. via API) | Blocked by RLS policy | ☐ Pass / ☐ Fail |
+| TC-B4-08 | Set a facility's status to Maintenance → try to reserve it | Blocked with an error from the trigger | ☐ Pass / ☐ Fail |
+| TC-B4-09 | As Administrator, open Audit Log | Approval/status-change entries are visible | ☐ Pass / ☐ Fail |
+| TC-B4-10 | Log out → open `dashboard.html` directly | Redirected to `index.html` (access denied) | ☐ Pass / ☐ Fail |
 
-## 8. Submission Checklist
-- [ ] GitHub repository URL
-- [ ] Live GitHub Pages URL
-- [ ] Updated ERD and Use Case Diagram (Section 5 & 6 above, or exported as image)
-- [ ] Role-permission matrix (Section 2)
-- [ ] Reservation workflow (Section 3)
-- [ ] Business rules (Section 4)
-- [ ] Audit-log screenshot (Administrator → Audit Log view)
-- [ ] Functional test results (Section 7, filled in with Pass/Fail)
+*Check off Pass or Fail per row while you run through the script on the live deployment, right before submission — a dated screenshot of this filled-in table (or the actual dashboard views) is stronger evidence than the table text alone.*
+
+## 8. Submission Package
+
+This section maps each item your professor asked for to where it's satisfied.
+
+| # | Requirement | Where it's satisfied |
+|---|---|---|
+| 1 | GitHub repository URL | `https://github.com/<your-username>/SAD-FacilityReservation-Ide` — fill in after pushing (Section 1.C, step 1–2) |
+| 2 | Live GitHub Pages URL | `https://<your-username>.github.io/SAD-FacilityReservation-Ide/` — fill in after enabling Pages (Section 1.C, step 3–4) |
+| 3 | Updated ERD and Use Case Diagram | Section 5 (ERD) and Section 6 (Use Case Diagram), above |
+| 4 | Role-permission matrix | Section 2, above |
+| 5 | Reservation workflow | Section 3, above |
+| 6 | Business rules | Section 4, above |
+| 7 | Audit-log screenshot | Log in as Administrator → Audit Log tab → screenshot the list of logged actions; attach separately or embed here |
+| 8 | Functional test results | Section 7, above — filled in with Pass/Fail per test case |
+
+**Before you submit:**
+- [ ] Fill in the two repo/live URLs at the top of this table
+- [ ] Run through Section 7 and mark each row Pass/Fail
+- [ ] Take the Audit Log screenshot (item 7) and attach it alongside this README
+- [ ] Export Sections 5–6 as images if your professor wants diagrams rather than text/ASCII versions
