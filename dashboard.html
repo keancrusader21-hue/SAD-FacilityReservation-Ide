@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Facility Reservation System — Dashboard</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand small">
+      <span class="brand-mark">FR</span>
+      <span>Facility Reservation</span>
+    </div>
+    <nav id="nav-links" class="nav-links"></nav>
+    <div class="sidebar-footer">
+      <div id="user-chip" class="user-chip"></div>
+      <button id="logout-btn" class="btn-ghost">Log out</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <h2 id="page-title">Facilities</h2>
+    </header>
+
+    
+    <section id="view-facilities" class="view active">
+      <div class="view-toolbar">
+        <p class="muted">Browse facilities and their current status.</p>
+        <button id="btn-add-facility" class="btn-primary hidden">+ Add Facility</button>
+      </div>
+      <div id="facilities-grid" class="grid"></div>
+    </section>
+
+    
+    <section id="view-reservations" class="view">
+      <div class="view-toolbar">
+        <p class="muted" id="reservations-subtitle">Your reservation requests.</p>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Facility</th><th>Purpose</th><th>Start</th><th>End</th><th>Status</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="reservations-body"></tbody>
+      </table>
+    </section>
+
+    
+    <section id="view-service" class="view">
+      <div class="view-toolbar">
+        <p class="muted">Facility condition &amp; service concerns.</p>
+        <button id="btn-add-service" class="btn-primary">+ Log Concern</button>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Facility</th><th>Description</th><th>Status</th><th>Logged</th></tr></thead>
+        <tbody id="service-body"></tbody>
+      </table>
+    </section>
+
+    
+    <section id="view-audit" class="view">
+      <div class="view-toolbar">
+        <p class="muted">System-wide audit trail of critical actions.</p>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Time</th><th>Action</th><th>Entity</th><th>Details</th></tr></thead>
+        <tbody id="audit-body"></tbody>
+      </table>
+    </section>
+  </main>
+</div>
+
+
+<dialog id="modal-reservation">
+  <form id="form-reservation" class="modal-form">
+    <h3>New Reservation</h3>
+    <label>Facility
+      <select id="res-facility" required></select>
+    </label>
+    <label>Purpose
+      <input type="text" id="res-purpose" required />
+    </label>
+    <label>Start
+      <input type="datetime-local" id="res-start" required />
+    </label>
+    <label>End
+      <input type="datetime-local" id="res-end" required />
+    </label>
+    <p class="form-msg" id="res-msg"></p>
+    <div class="modal-actions">
+      <button type="button" class="btn-ghost" data-close>Cancel</button>
+      <button type="submit" class="btn-primary">Submit Request</button>
+    </div>
+  </form>
+</dialog>
+
+
+<dialog id="modal-facility">
+  <form id="form-facility" class="modal-form">
+    <h3>Add Facility</h3>
+    <label>Name<input type="text" id="fac-name" required /></label>
+    <label>Description<input type="text" id="fac-desc" /></label>
+    <label>Location<input type="text" id="fac-location" /></label>
+    <label>Capacity<input type="number" id="fac-capacity" min="1" /></label>
+    <p class="form-msg" id="fac-msg"></p>
+    <div class="modal-actions">
+      <button type="button" class="btn-ghost" data-close>Cancel</button>
+      <button type="submit" class="btn-primary">Save Facility</button>
+    </div>
+  </form>
+</dialog>
+
+
+<dialog id="modal-service">
+  <form id="form-service" class="modal-form">
+    <h3>Log Facility Concern</h3>
+    <label>Facility
+      <select id="svc-facility" required></select>
+    </label>
+    <label>Description<textarea id="svc-desc" required></textarea></label>
+    <p class="form-msg" id="svc-msg"></p>
+    <div class="modal-actions">
+      <button type="button" class="btn-ghost" data-close>Cancel</button>
+      <button type="submit" class="btn-primary">Submit</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabaseClient.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
