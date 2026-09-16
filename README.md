@@ -96,8 +96,8 @@ Requester:
 
 | Test ID | Steps | Expected | Result |
 |---|---|---|---|
-| TC-B4-01 | Log in as Requester → Facilities → Reserve an active facility → submit | Row appears in Reservations with status **Pending** | ☐ Pass / ☐ Fail |
-| TC-B4-02 | Submit a reservation for a facility/time that overlaps an already-Approved one | Insert/approve blocked with a schedule-conflict error | ☐ Pass / ☐ Fail |
+| TC-B4-01 | Log in as Requester → Facilities → Reserve an active facility → submit | Row appears in Reservations with status **Pending** | ☐ Pass |
+| TC-B4-02 | Submit a reservation for a facility/time that overlaps an already-Approved one | Insert/approve blocked with a schedule-conflict error | ☐ Pass |
 | TC-B4-03 | Log in as Administrator → Reservations → Approve a Pending request | Status becomes **Scheduled** | ☐ Pass |
 | TC-B4-04 | As Administrator, Reject a Pending request | Status becomes **Rejected** | ☐ Pass  |
 | TC-B4-05 | Log in as Facility Staff → mark a Scheduled reservation "In Use" | Status updates to **In Use** | ☐ Pass |
