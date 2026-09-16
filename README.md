@@ -96,16 +96,16 @@ Requester:
 
 | Test ID | Steps | Expected | Result |
 |---|---|---|---|
-| TC-B4-01 | Log in as Requester → Facilities → Reserve an active facility → submit | Row appears in Reservations with status **Pending** | ☐ Pass |
-| TC-B4-02 | Submit a reservation for a facility/time that overlaps an already-Approved one | Insert/approve blocked with a schedule-conflict error | ☐ Pass |
-| TC-B4-03 | Log in as Administrator → Reservations → Approve a Pending request | Status becomes **Scheduled** | ☐ Pass |
-| TC-B4-04 | As Administrator, Reject a Pending request | Status becomes **Rejected** | ☐ Pass  |
-| TC-B4-05 | Log in as Facility Staff → mark a Scheduled reservation "In Use" | Status updates to **In Use** | ☐ Pass |
-| TC-B4-06 | As Facility Staff, mark an In Use reservation "Complete" | Status becomes **Completed** | ☐ Pass  |
-| TC-B4-07 | As Requester A, try to edit/cancel Requester B's request (e.g. via API) | Blocked by RLS policy | ☐ Pass |
-| TC-B4-08 | Set a facility's status to Maintenance → try to reserve it | Blocked with an error from the trigger | ☐ Pass |
-| TC-B4-09 | As Administrator, open Audit Log | Approval/status-change entries are visible | ☐ Pass |
-| TC-B4-10 | Log out → open `dashboard.html` directly | Redirected to `index.html` (access denied) | ☐ Pass |
+| TC-B4-01 | Log in as Requester → Facilities → Reserve an active facility → submit | Row appears in Reservations with status **Pending** |  Pass |
+| TC-B4-02 | Submit a reservation for a facility/time that overlaps an already-Approved one | Insert/approve blocked with a schedule-conflict error |  Pass |
+| TC-B4-03 | Log in as Administrator → Reservations → Approve a Pending request | Status becomes **Scheduled** |  Pass |
+| TC-B4-04 | As Administrator, Reject a Pending request | Status becomes **Rejected** |  Pass  |
+| TC-B4-05 | Log in as Facility Staff → mark a Scheduled reservation "In Use" | Status updates to **In Use** |  Pass |
+| TC-B4-06 | As Facility Staff, mark an In Use reservation "Complete" | Status becomes **Completed** |  Pass  |
+| TC-B4-07 | As Requester A, try to edit/cancel Requester B's request (e.g. via API) | Blocked by RLS policy |  Pass |
+| TC-B4-08 | Set a facility's status to Maintenance → try to reserve it | Blocked with an error from the trigger |  Pass |
+| TC-B4-09 | As Administrator, open Audit Log | Approval/status-change entries are visible |  Pass |
+| TC-B4-10 | Log out → open `dashboard.html` directly | Redirected to `index.html` (access denied) |  Pass |
 
 *Check off Pass or Fail per row while you run through the script on the live deployment, right before submission — a dated screenshot of this filled-in table (or the actual dashboard views) is stronger evidence than the table text alone.*
 
