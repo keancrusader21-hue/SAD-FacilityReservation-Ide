@@ -6,14 +6,14 @@ Laboratory 4 - Section B | Systems Analysis and Design
 ## A: Sample Administrator: 
 Email:kean@gmail.com
 Pass:123456789
-## A: Sample Requester: 
+## B: Sample Requester: 
 Email:ignacio@gmail.com
 Pass:123456789
-## A: Sample Facility Staff: 
+## C: Sample Facility Staff: 
 Email:baslan@gmail.com
 Pass:123456789
 
-## 1. 
+## 
 | 1 | GitHub repository URL | `https://github.com/keancrusader21-hue/SAD-FacilityReservation-Ide` 
 
 | 2 | Live GitHub Pages URL | `https://keancrusader21-hue.github.io/SAD-FacilityReservation-Ide/`
