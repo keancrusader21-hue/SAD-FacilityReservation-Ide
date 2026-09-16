@@ -110,22 +110,4 @@ Requester:
 *Check off Pass or Fail per row while you run through the script on the live deployment, right before submission — a dated screenshot of this filled-in table (or the actual dashboard views) is stronger evidence than the table text alone.*
 
 ## 8. Submission Package
-
-This section maps each item your professor asked for to where it's satisfied.
-
-| # | Requirement | Where it's satisfied |
-|---|---|---|
-| 1 | GitHub repository URL | `https://github.com/<your-username>/SAD-FacilityReservation-Ide` — fill in after pushing (Section 1.C, step 1–2) |
-| 2 | Live GitHub Pages URL | `https://<your-username>.github.io/SAD-FacilityReservation-Ide/` — fill in after enabling Pages (Section 1.C, step 3–4) |
-| 3 | Updated ERD and Use Case Diagram | Section 5 (ERD) and Section 6 (Use Case Diagram), above |
-| 4 | Role-permission matrix | Section 2, above |
-| 5 | Reservation workflow | Section 3, above |
-| 6 | Business rules | Section 4, above |
-| 7 | Audit-log screenshot | Log in as Administrator → Audit Log tab → screenshot the list of logged actions; attach separately or embed here |
-| 8 | Functional test results | Section 7, above — filled in with Pass/Fail per test case |
-
-**Before you submit:**
-- [ ] Fill in the two repo/live URLs at the top of this table
-- [ ] Run through Section 7 and mark each row Pass/Fail
-- [ ] Take the Audit Log screenshot (item 7) and attach it alongside this README
-- [ ] Export Sections 5–6 as images if your professor wants diagrams rather than text/ASCII versions
+   ![Audit Log Screenshot](screenshots/audit-log.png)
